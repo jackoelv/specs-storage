@@ -17,6 +17,7 @@ type Storage interface {
 	NewSector(ctx context.Context, sector abi.SectorID) error
 	// Add a piece to an existing *unsealed* sector
 	AddPiece(ctx context.Context, sector abi.SectorID, pieceSizes []abi.UnpaddedPieceSize, newPieceSize abi.UnpaddedPieceSize, pieceData Data) (abi.PieceInfo, error)
+	DealAddPiece(ctx context.Context, sector abi.SectorID, pieceSizes []abi.UnpaddedPieceSize, newPieceSize abi.UnpaddedPieceSize, pieceData Data) (abi.PieceInfo, error)
 }
 
 type Prover interface {
